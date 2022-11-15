@@ -1,0 +1,19 @@
+name: 'Lint first commit made'
+description: Github action to lint the first commit made since will be use for Changelog
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        # we actually need "github.event.pull_request.commits + 1" commit
+        fetch-depth: 0
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        cache: 'yarn'
+    - shell: bash
+      run: |
+        yarn install
+        FIRST_COMMIT_SHA=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" ${{ github.event.pull_request.commits_url }} | jq -r '.[0].sha')
+        yarn commitlint --from $FIRST_COMMIT_SHA --to $FIRST_COMMIT_SHA

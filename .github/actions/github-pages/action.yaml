@@ -1,0 +1,14 @@
+name: 'Github Pages'
+description: Github action to create the github pages
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        cache: 'yarn'
+    - shell: bash
+      run: |
+        cd demo && yarn add gh-pages && yarn install && yarn build && gh-pages -d demo/build
