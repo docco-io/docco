@@ -1,6 +1,6 @@
 import './styles.css';
 
-import { Docco } from '@docco/docco-wip';
+import { Docco } from '@docco/docco';
 
 export default function App() {
   return (

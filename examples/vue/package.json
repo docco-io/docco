@@ -1,5 +1,5 @@
 {
-  "name": "@docco/docco-wip-vue",
+  "name": "@docco/docco-vue",
   "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve",

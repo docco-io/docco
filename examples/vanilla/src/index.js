@@ -1,6 +1,6 @@
-import * as Docco from "@docco/docco-wip";
+import * as Docco from '@docco/docco';
 
-import "./styles.css";
+import './styles.css';
 
-const element = document.getElementById("app");
-Docco.init("https://test", element);
+const element = document.getElementById('app');
+Docco.init('https://test', element);

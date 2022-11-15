@@ -32,7 +32,7 @@ When in doubt, keep your Pull Requests small. To give a Pull Request the best ch
 
 ### Before submitting a pull request, please make sure the following is done:
 
-1. Fork the [repository](https://github.com/doccoio/docco-wip) and create your branch from main.
+1. Fork the [repository](https://github.com/doccoio/docco) and create your branch from main.
 2. Install dependencies with yarn install. Make sure you are using at least node 16 for local development
 3. If you’ve fixed a bug or added code that should be tested, add tests!
 4. Ensure the test suite passes (yarn test). Tip: yarn test --watch TestName is helpful in development.
@@ -73,9 +73,9 @@ Make sure the following is true:
 - If a feature is being added:
   - If the result was already achievable with the core library, explain why this feature needs to be added to the core.
   - If this is a common use case, consider adding an example to the documentation.
-- When adding new features or modifying existing ones, please include tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/docco/docco-wip/blob/HEAD/test/README.md).
+- When adding new features or modifying existing ones, please include tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/docco/docco/blob/HEAD/test/README.md).
 - If props were added or prop types were changed, the TypeScript declarations were updated.
-- When submitting a new component, please add it to the [lab](https://github.com/docco/docco-wip/tree/HEAD/packages/Docco-lab).
+- When submitting a new component, please add it to the [lab](https://github.com/docco/docco/tree/HEAD/packages/Docco-lab).
 - The branch is not [behind its target branch](https://github.community/t/branch-10-commits-behind/2403).
 
 Because we will only merge a Pull Request for which all tests pass. The following items need to be true:
@@ -109,7 +109,7 @@ This task should not fail in isolation. It generates for more information look a
 ### Updating the component API documentation
 
 The component API in the component `propTypes` and under `docs/pages/api-docs` is auto-generated from the [JSDoc](https://jsdoc.app/about-getting-started.html) in the TypeScript declarations.
-Be sure to update the documentation in the corresponding `.d.ts` files (e.g. `packages/docco-wip/src/Button/Button.d.ts` for `<Button>`) and then run:
+Be sure to update the documentation in the corresponding `.d.ts` files (e.g. `packages/docco/src/Button/Button.d.ts` for `<Button>`) and then run:
 
 ```sh
 $ yarn proptypes
@@ -167,7 +167,7 @@ If you are not familiar with that language, write the demo in JavaScript, a core
 
 ### 4. You are done 🎉
 
-In case you missed something, [we have a real example that can be used as a summary report](https://github.com/docco/docco-wip/pull/19582/files).
+In case you missed something, [we have a real example that can be used as a summary report](https://github.com/docco/docco/pull/19582/files).
 
 ## How can I use a change that wasn't released yet?
 
@@ -182,8 +182,8 @@ index 791a7da1f4..a5db13b414 100644
 +++ b/package.json
 @@ -61,7 +61,7 @@
    "dependencies": {
--    "@docco/docco-wip": "0.0.1",
-+    "@docco/docco-wipl": "https://pkg.csb.dev/docco/docco-wip/commit/371c952b/@docco/docco-wip"
+-    "@docco/docco": "0.0.1",
++    "@docco/doccol": "https://pkg.csb.dev/docco/docco/commit/371c952b/@docco/docco"
    }
 ```
 
@@ -202,4 +202,4 @@ To get a sense of where Docco is heading, or for ideas on where you could contri
 
 ## License
 
-By contributing your code to the [docco/docco-wip](https://github.com/docco/docco-wip) GitHub repository, you agree to license your contribution under the [MIT license](/LICENSE).
+By contributing your code to the [docco/docco](https://github.com/docco/docco) GitHub repository, you agree to license your contribution under the [MIT license](/LICENSE).

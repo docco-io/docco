@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import * as Docco from "@docco/docco-wip";
+import * as Docco from "@docco/docco";
 
 export default {
   name: "HelloWorld",

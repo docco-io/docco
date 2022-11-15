@@ -1,3 +1,5 @@
+TEST
+
 <!-- Back to the toop --->
 <a name="readme-top"></a>
 
@@ -57,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project 📝
 
-Docco is the no code tool that with a few clicks will boost your company documentation. We understand how important it is to build a product, that is why we help companies transform their API specs into products that will facilitate the integration of customers. 
+Docco is the no code tool that with a few clicks will boost your company documentation. We understand how important it is to build a product, that is why we help companies transform their API specs into products that will facilitate the integration of customers.
 
 Our mission is to transform documentation into products without any effort. Nowadays all the companies need to provide endpoints that other companies can integrate with. One of the biggest problems is that the documentation provided for companies to integrate with those endpoints is inaccurate, outdated, unclear and can lead to confusion and even frustration from the customers. Docco is here to avoid all that, with just a few clicks, all the documentation will be ready to be consumed
 
@@ -87,13 +89,13 @@ This section should list any major frameworks/libraries used to bootstrap your p
 ### Installation <a name = "installation"></a>
 
 ```bash
-npm install --save docco-wip
+npm install --save docco
 ```
 
 Or with yarn:
 
 ```bash
-yarn add docco-wip
+yarn add docco
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -104,13 +106,13 @@ yarn add docco-wip
 ## Usage ✨ <a name = "usage"></a>
 
 ```jsx
-import Docco from '@docco/docco-wip';
+import Docco from '@docco/docco';
 import React from 'react';
 
     render() {
         return (
             <div id="docco">
-                <Docco url="https://url-to-spec-file" />       
+                <Docco url="https://url-to-spec-file" />
             </div>
             );
         }
@@ -119,12 +121,12 @@ import React from 'react';
 
 In the interactive demo below, try changing the code and see how it affects the output.
 
-[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/docco-wip-u9sy1h)
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/docco-u9sy1h)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
---- 
+---
 <!-- API AND PROPS -->
 ## API / Props 🧪<a name = "api-props"></a>
 
@@ -209,11 +211,11 @@ This project would not be possible without:
 [LinkedIn-url]: https://www.linkedin.com/company/doccoio
 [Status]: https://img.shields.io/badge/status-active-success.svg
 [GitHub-issues]: https://img.shields.io/github/issues/doccoorg/docco.svg
-[Github-issues-url]: https://github.com/doccoio/docco-wip/issues
+[Github-issues-url]: https://github.com/doccoio/docco/issues
 [Github-pr]: https://img.shields.io/github/issues-pr/doccoorg/docco.svg
-[Github-pr-url]: https://github.com/doccoio/docco-wip/pulls
+[Github-pr-url]: https://github.com/doccoio/docco/pulls
 [npm]: https://img.shields.io/badge/package-npm-green.svg
-[npm-url]: https://www.npmjs.com/package/docco-wip
+[npm-url]: https://www.npmjs.com/package/docco
 [License]: https://img.shields.io/badge/license-MIT-green.svg
 [License-url]: https://opensource.org/licenses/MIT
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white&

@@ -1,5 +1,5 @@
 {
-  "name": "@docco/docco-wip-vanilla",
+  "name": "@docco/docco-vanilla",
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {

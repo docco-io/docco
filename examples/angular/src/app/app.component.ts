@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
-import * as Docco from "@docco/docco-wip";
+import * as Docco from '@docco/docco';
 
 @Component({
   selector: "app-root",

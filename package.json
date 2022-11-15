@@ -1,5 +1,5 @@
 {
-  "name": "@docco/docco-wip",
+  "name": "@docco/docco",
   "type": "module",
   "version": "1.5.1",
   "description": "Write code, not docs",
@@ -7,10 +7,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/doccoio/docco-wip.git"
+    "url": "https://github.com/doccoio/docco.git"
   },
   "bugs": {
-    "url": "https://github.com/doccoio/docco-wip/issues"
+    "url": "https://github.com/doccoio/docco/issues"
   },
   "homepage": "https:/docco.io/",
   "keywords": [
