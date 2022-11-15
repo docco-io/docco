@@ -1,0 +1,12 @@
+node_modules
+dist
+src/__tests__
+**/*.test.tsx
+**/*.spec.tsx
+**/*.stories.tsx
+examples
+docs
+demo
+jest.config.js
+rollup.config.js
+babel.config.js

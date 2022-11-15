@@ -1,0 +1,11 @@
+{
+  "node": "16",
+  "sandboxes": [
+    "/examples/vanilla",
+    "/examples/react",
+    "/examples/vue",
+    "/examples/angular",
+    "/examples/wc",
+    "/examples/standalone"
+  ]
+}
