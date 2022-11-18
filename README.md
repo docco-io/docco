@@ -5,7 +5,7 @@
  <img src="https://avatars.githubusercontent.com/u/115881080?s=400&u=d3a86c9770bb0171f2db7e5393a820de88e3eb3a&v=4" height="300px" width: 50% alt="Docco"></a>
 </p>
 
-<h1 align="center">Docco WIP</h1>
+<h1 align="center">Docco</h1>
 
 <div align="center">
 
