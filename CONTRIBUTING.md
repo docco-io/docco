@@ -33,141 +33,91 @@ When in doubt, keep your Pull Requests small. To give a Pull Request the best ch
 ### Before submitting a pull request, please make sure the following is done:
 
 1. Fork the [repository](https://github.com/doccoio/docco) and create your branch from main.
-2. Install dependencies with yarn install. Make sure you are using at least node 16 for local development
-3. If you’ve fixed a bug or added code that should be tested, add tests!
-4. Ensure the test suite passes (yarn test). Tip: yarn test --watch TestName is helpful in development.
-5. Run yarn test --prod to test in the production environment.
-6. If you need a debugger, run yarn debug-test --watch TestName, open chrome://inspect, and press “Inspect”.
-7. Format your code with prettier (yarn prettier).
-8. Make sure your code lints (yarn lint). Tip: yarn lint to only check changed files.
+2. Install dependencies with `yarn install`. Make sure you are using at least node 16 for local development
+3. If you’ve fixed a bug or added code that should be tested, add tests!. Our project is driven by quality so PR without coverage will not be accepted
+4. Ensure the Unit test pass `yarn test`
+5. Ensure the Interaction test pass `yarn storybook:test:ci`. This command is to launch storybook and run the test in all the browsers
+6. Ensure the Lint pass `yarn lint`
+7. Ensure the Prettier pass `yarn format`
+8. Our project is based on conventional commits, we recommend to use `yarn commit` in order to commit using commitlint cli but also is possible to commit in any other way
+
+ℹ️ All this commands will be run automatically on the CI process and locally we are using husky, so in case any of those is missing, there is a process that will automatically run them
 
 The team is monitoring for Pull Requests. We will review your Pull Request and either merge it, request changes to it, or close it with an explanation.
 
-### Trying changes on the documentation site
+### Trying changes on codesandbox
 
-The documentation site is built with Docco and contains examples of all the components.
-This is the best place to experiment with your changes.
-It's the local development environment used by the maintainers.
+When the Pull Request will be created, the code-sandbox ci task will generate multiple examples based on the examples project that is available on the repository  
 
-To get started:
+You can open any of the examples and test their your changes since the example are generated based on your commit
 
-```sh
-yarn start
-```
-
-You can now access the documentation site locally: http://localhost:3000.
-Changes to the docs will hot reload the site.
+The url with the examples will be available on the Pull Request
 
 
 ### How to increase the chance of being accepted?
 
 Continuous Integration (CI) runs a series of checks automatically when a Pull Request is opened. If you're not
 sure if your changes will pass, you can always open a Pull Request and the GitHub UI will display a summary of
-the results. If any of them fail, refer to [Checks and how to fix them](#checks-and-how-to-fix-them).
+the results. 
 
-Make sure the following is true:
-
-<!-- #default-branch-switch -->
+#### Our CI Process
 
 - The branch is targeted at `main` for ongoing development. We do our best to keep `main` in good shape, with all tests passing. Code that lands in `main` must be compatible with the latest stable release. It may contain additional features, but no breaking changes. We should be able to release a new minor version from the tip of `main` at any time.
-- If a feature is being added:
-  - If the result was already achievable with the core library, explain why this feature needs to be added to the core.
-  - If this is a common use case, consider adding an example to the documentation.
-- When adding new features or modifying existing ones, please include tests to confirm the new behavior. You can read more about our test setup in our test [README](https://github.com/docco/docco/blob/HEAD/test/README.md).
-- If props were added or prop types were changed, the TypeScript declarations were updated.
-- When submitting a new component, please add it to the [lab](https://github.com/docco/docco/tree/HEAD/packages/Docco-lab).
-- The branch is not [behind its target branch](https://github.community/t/branch-10-commits-behind/2403).
 
-Because we will only merge a Pull Request for which all tests pass. The following items need to be true:
+1. **Lint PR Title**: Action that will check that the Pull Request title follows the pattern `<type>[optional scope]: <description>`. (See: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for a great explanation).
+2. **Lint commit**: Action that will check that the commit follows the conventional commits
+3. **Lint Code**: Action that will check the code follows the code styles guidelines
+4. **Unit test**: Action that will run the unit test
+5. **Build**: Action that will build the project
+6. **Interaction test**: Action that will run the interaction test in multiple browsers using storybook
 
-- The code is formatted. If the code was changed, run `yarn prettier`.
-- The code is linted. If the code was changed, run `yarn lint`.
-- The code is type-safe. If TypeScript sources/declarations were changed, `yarn typescript` passed.
-- The API docs are up-to-date. If API was changed, run `yarn proptypes && yarn docs:api`.
-- The demos are up-to-date. If demos were changed, make sure `yarn docs:typescript:formatted` does not introduce changes. See [about writing demos](#3-write-the-content-of-the-demo).
-- The Pull Request title follows the pattern `[Component] Imperative commit message`. (See: [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) for a great explanation).
-
-If you have missed a step, don't worry, the Continuous Integration will run a thorough test on your commits and the maintainers of the project can assist.
+If you have missed a step, don't worry, the Continuous Integration will run a through test on your commits and the maintainers of the project can assist at any time.
 
 If your pull request addresses an open issue, make sure to link the PR to that issue.
 Use any [supported GitHub keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) in the PR description to automatically link them.
+
 This makes it easier to understand where the PR is coming from and also speeds things up as the issue gets closed when the PR is merged.
 
-#### Checks and how to fix them
+### Autogenerated Docs
 
-If any of the checks fails click on the _Details_
-link and review the logs of the build to find out why it failed.
-For CircleCI you need to log in first.
-No further permissions are required to view the build logs.
-The following section gives an overview of what each check is responsible for.
+For documentation we have the live code that leaves in codesandbox, but we also take advantage of typedoc that will autogenerate the documentation of our componenets
 
-##### release-please
-
-This task should not fail in isolation. It generates for more information look at [Release Please Action](https://github.com/google-github-actions/release-please-action)
-
-
-### Updating the component API documentation
-
-The component API in the component `propTypes` and under `docs/pages/api-docs` is auto-generated from the [JSDoc](https://jsdoc.app/about-getting-started.html) in the TypeScript declarations.
-Be sure to update the documentation in the corresponding `.d.ts` files (e.g. `packages/docco/src/Button/Button.d.ts` for `<Button>`) and then run:
-
-```sh
-$ yarn proptypes
-$ yarn docs:api
-```
+In order to generate them only is needed to run `yarn docs`
 
 ### Coding style
 
 Please follow the coding style of the project. Docco uses prettier and eslint, so if possible, enable linting in your editor to get real-time feedback.
 
-- `yarn prettier` reformats the code.
+- `yarn format` reformats the code.
 - `yarn lint` runs manually the linting rules.
+- `yarn lint:fix` runs manually the linting rules and fix automatically the potential issues
 
 Finally, when you submit a Pull Request, they are run again by our continuous integration tools, but hopefully, your code is already clean!
 
-## How to add a new demo in the documentation
+## How to add a new example on storybook
 
-If, for example, you want to add new demos for the button component, you have to take the following steps:
+### 1. Add a new Story 
 
-### 1. Add a new React component file under the related directory
+Storybook by default it will look any file that contains `*.stories*` inside the `src` folder. So to add a new example you can create a new file or update the existing ones
 
-In this case, you are going to add the new file to the following directory:
+### 2. Test the new story
 
-```sh
-docs/src/pages/components/buttons/
-```
+In order to test the new example it is neccesary to run `yarn storybook`
+After the build is done, the browser will be open showing all the different stories added
 
-and give it a name: `SuperButtons.js`.
+### 3. Write an Interaction Test
 
-### 2. Edit the page Markdown file
+Docco is a brand oriented to quality. All the new code needs to be potentially tested. The interaction test is a concept that was brought by storybook [See](https://storybook.js.org/blog/interaction-testing-with-storybook/)
 
-The Markdown file is the source for the website documentation. So, whatever you wrote there will be reflected on the website.
-In this case, the file you need to edit is `docs/src/pages/components/buttons/buttons.md`.
+The interaction test help us to test our examples created as stories, that are real use cases. There is plenty of material on the web but if you need any maintainers help don't hesitate to let us know
 
-Changes should only be applied to the English version e.g. only `app-bar.md` and
-not `app-bar-de.md`. For contributions concerning translations please read the [section
-about translations](#translations).
-
-```diff
-+### Super buttons
-+
-+Sometimes, you need a super button to make your app looks **superb**. Yea ...
-+
-+{{"demo": "pages/components/buttons/SuperButtons.js"}}
-```
-
-### 3. Write the content of the demo
-
-Docco documents how to use this library with TypeScript.
-
-If you are familiar with this language, write the demo in TypeScript, and only, in a \*.tsx file.
-When you're done run `yarn docs:typescript:formatted` to automatically create the JavaScript version.
-
-If you are not familiar with that language, write the demo in JavaScript, a core contributor might help you to migrate it to TypeScript.
+1. Go to tests/e2e
+2. Add a new interaction test in `Docco.test.ts` or create any file following the convention `*test.ts` since storybook interaction test are based on jest
+3. Run your test `yarn storybook:test`. For this command is neccesary to have storybook running if not you can always run `yarn storybook:test:ci` that will run the same command that is use in the CI process
 
 ### 4. You are done 🎉
 
-In case you missed something, [we have a real example that can be used as a summary report](https://github.com/docco/docco/pull/19582/files).
+In case you have any problem the maintainers and the community of docco is here to help
 
 ## How can I use a change that wasn't released yet?
 
@@ -183,7 +133,7 @@ index 791a7da1f4..a5db13b414 100644
 @@ -61,7 +61,7 @@
    "dependencies": {
 -    "@docco/docco": "0.0.1",
-+    "@docco/doccol": "https://pkg.csb.dev/docco/docco/commit/371c952b/@docco/docco"
++    "@docco/docco": "https://pkg.csb.dev/docco/docco/commit/371c952b/@docco/docco"
    }
 ```
 
@@ -202,4 +152,4 @@ To get a sense of where Docco is heading, or for ideas on where you could contri
 
 ## License
 
-By contributing your code to the [docco/docco](https://github.com/docco/docco) GitHub repository, you agree to license your contribution under the [MIT license](/LICENSE).
+By contributing your code to the [docco/docco](https://github.com/doccoio/docco) GitHub repository, you agree to license your contribution under the [MIT license](/LICENSE).
