@@ -39,7 +39,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#api-props">API and props</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contribute">Contribute</a></li>
@@ -87,8 +87,8 @@ yarn add docco
 
 ---
 
-<!-- USAGE -->
-## Usage ✨ <a name = "usage"></a>
+<!-- DEMO -->
+## Demo ✨ <a name = "demo"></a>
 
 ```tsx
 import Docco from '@docco/docco';
@@ -106,10 +106,19 @@ export default function App() {
 
 In the interactive demo below, try changing the code and see how it affects the output.
 
-Under the examples folder we have plenty of examples that are generated in codesandbox
-
 [![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/docco-docco-react-wwl68t)
 
+
+Directory `examples` contains examples of how to use Docco component
+
+| Demo                                     | Usage  | Description                                                       |
+| ---------------------------------------- | ------ | ----------------------------------------------------------------- |
+| [Angular demo](./examples/angular/)      | Anguar | Demo for Angular component. Run `npm run start` to start demo.    |
+| [React demo](./examples/react/)          | React  | Demo for React component. Run `npm run start` to start demo.      |
+| [Standalone demo](./examples/standalone/)| HTML   | Demo for Standalone component. Run `npm run start` to start demo. |
+| [Vanilla demo](./examples/vanilla/)      | HTML   | Demo for Vanilla component. Run `npm run start` to start demo.    |
+| [Vue demo](./examples/vue/)              | Vue    | Demo for Vue component. Run `npm run serve` to start demo.        |
+| [Web Component demo](./examples/wc/)     | HTML   | Demo for Web component. Run `npm run start` to start demo.        |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
