@@ -111,14 +111,15 @@ In the interactive demo below, try changing the code and see how it affects the 
 
 Directory `examples` contains examples of how to use Docco component
 
-| Demo                                     | Usage  | Description                                                       |
-| ---------------------------------------- | ------ | ----------------------------------------------------------------- |
-| [Angular demo](./examples/angular/)      | Anguar | Demo for Angular component. Run `npm run start` to start demo.    |
-| [React demo](./examples/react/)          | React  | Demo for React component. Run `npm run start` to start demo.      |
-| [Standalone demo](./examples/standalone/)| HTML   | Demo for Standalone component. Run `npm run start` to start demo. |
-| [Vanilla demo](./examples/vanilla/)      | HTML   | Demo for Vanilla component. Run `npm run start` to start demo.    |
-| [Vue demo](./examples/vue/)              | Vue    | Demo for Vue component. Run `npm run serve` to start demo.        |
-| [Web Component demo](./examples/wc/)     | HTML   | Demo for Web component. Run `npm run start` to start demo.        |
+| Demo                                     | Usage   | Description                                                       |
+| ---------------------------------------- | ------- | ----------------------------------------------------------------- |
+| [Angular demo](./examples/angular/)      | Angular | Demo for Angular component. Run `npm run start` to start demo.    |
+| [React demo](./examples/react/)          | React   | Demo for React component. Run `npm run start` to start demo.      |
+| [Standalone demo](./examples/standalone/)| HTML    | Demo for Standalone component. Run `npm run start` to start demo. |
+| [Vanilla demo](./examples/vanilla/)      | HTML    | Demo for Vanilla component. Run `npm run start` to start demo.    |
+| [Vue demo](./examples/vue/)              | Vue     | Demo for Vue component. Run `npm run serve` to start demo.        |
+| [Web Component demo](./examples/wc/)     | HTML    | Demo for Web component. Run `npm run start` to start demo.        |
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,7 +196,8 @@ This project would not be possible without:
 * [![Mui][Mui]][Mui-url]
 * [![React][React.js]][React-url]
 * [![GitHub][GitHub]][GitHub-url]
-
+* [![Release-it][Release-it]][Release-it-url]
+* [![Storybook][Storybook]][Storybook-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -225,3 +227,10 @@ This project would not be possible without:
 [React-url]: https://reactjs.org/
 [Github]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
 [Github-url]: https://github.com/
+[Release-it]: https://img.shields.io/badge/release_it-%23121011.svg?style=for-the-badge&logo=semantic-release&color=red
+[Release-it-url]: https://github.com/release-it/release-it
+[Storybook]: https://img.shields.io/badge/storybook-%23121011.svg?style=for-the-badge&logo=storybook&color=purple
+[Storybook-url]: https://github.com/release-it/release-it
+
+
+
