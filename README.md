@@ -31,9 +31,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -42,7 +39,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#api-props">API and props</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contribute">Contribute</a></li>
@@ -63,16 +60,6 @@ Our mission is to transform documentation into products without any effort. Nowa
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- BUILT WITH -->
-### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [![Next.js][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ---
 <!-- GETTING STARTED -->
 ## Getting Started 🚀
@@ -81,7 +68,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 ### Pre-Requisites <a name = "pre-requisites"></a>
 
 * Have installed yarn or npm
-* Node version >= 12
+* Node version >= 16
 
 <!-- INSTALLATION -->
 ### Installation <a name = "installation"></a>
@@ -100,33 +87,55 @@ yarn add docco
 
 ---
 
-<!-- USAGE -->
-## Usage ✨ <a name = "usage"></a>
+<!-- DEMO -->
+## Demo ✨ <a name = "demo"></a>
 
-```jsx
+```tsx
 import Docco from '@docco/docco';
 import React from 'react';
 
-    render() {
-        return (
-            <div id="docco">
-                <Docco url="https://url-to-spec-file" />
-            </div>
-            );
-        }
+export default function App() {
+  return (
+    <div className='App'>
+      <Docco url='https://api.docco.io/openapi.json' />
+    </div>
+  );
+}
 
 ```
 
 In the interactive demo below, try changing the code and see how it affects the output.
 
-[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/docco-u9sy1h)
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/docco-docco-react-wwl68t)
+
+
+Directory `examples` contains examples of how to use Docco component
+
+| Demo                                     | Usage   | Description                                                       |
+| ---------------------------------------- | ------- | ----------------------------------------------------------------- |
+| [Angular demo](./examples/angular/)      | Angular | Demo for Angular component. Run `npm run start` to start demo.    |
+| [React demo](./examples/react/)          | React   | Demo for React component. Run `npm run start` to start demo.      |
+| [Standalone demo](./examples/standalone/)| HTML    | Demo for Standalone component. Run `npm run start` to start demo. |
+| [Vanilla demo](./examples/vanilla/)      | HTML    | Demo for Vanilla component. Run `npm run start` to start demo.    |
+| [Vue demo](./examples/vue/)              | Vue     | Demo for Vue component. Run `npm run serve` to start demo.        |
+| [Web Component demo](./examples/wc/)     | HTML    | Demo for Web component. Run `npm run start` to start demo.        |
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 <!-- API AND PROPS -->
-## API / Props 🧪<a name = "api-props"></a>
+## API / Props 🧪 <a name = "api-props"></a>
+
+```tsx
+export interface Props {
+  url: string;
+  theme?: 'light' | 'dark';
+}
+
+```
+- **url**: Url where the open api spec is located. For example: https://petstore.swagger.io/v2/swagger.json
+- **theme**: Will set the docs theme. For now we support light and dark. The goal of this property is to receive a config object to make the look and feeling of the documentation customizable per organization
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -134,15 +143,9 @@ In the interactive demo below, try changing the code and see how it affects the 
 <!-- ROADMAP -->
 ## Roadmap 📍 <a name = "roadmap"></a>
 
-- [] Add MUI Theme to repository
-- [] Tools and processes
-    - [X] Rollup config
-    - [X] Codesandbox CI
-    - [X] Commit lint
-    - [] Contribute Guide
-    - [] Unit tests
-    - [] Component tests
-    - [] E2E test
+- [O] MVP Version of Docco
+- [O] Docco v2
+  - [🤫😶] Stay tuned
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -179,7 +182,7 @@ MIT © [Docco](https://github.com/doccoio)
 ## Contact 👻
 
 - 🇵🇹 jcunhafonte@gmail.com
-- 🇦🇷 lucas.hartridge@gmail.com
+- 🇦🇷 hartridge.lucas@gmail.com
 - 🌍 doccoioofficial@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -190,9 +193,11 @@ MIT © [Docco](https://github.com/doccoio)
 
 This project would not be possible without:
 
-* [Material-ui](https://github.com/mui/material-ui)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
+* [![Mui][Mui]][Mui-url]
+* [![React][React.js]][React-url]
+* [![GitHub][GitHub]][GitHub-url]
+* [![Release-it][Release-it]][Release-it-url]
+* [![Storybook][Storybook]][Storybook-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -208,15 +213,24 @@ This project would not be possible without:
 [LinkedIn]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [LinkedIn-url]: https://www.linkedin.com/company/doccoio
 [Status]: https://img.shields.io/badge/status-active-success.svg
-[GitHub-issues]: https://img.shields.io/github/issues/doccoorg/docco.svg
+[GitHub-issues]: https://img.shields.io/github/issues/doccoio/docco
 [Github-issues-url]: https://github.com/doccoio/docco/issues
-[Github-pr]: https://img.shields.io/github/issues-pr/doccoorg/docco.svg
+[Github-pr]: https://img.shields.io/github/issues-pr/doccoio/docco
 [Github-pr-url]: https://github.com/doccoio/docco/pulls
 [npm]: https://img.shields.io/badge/package-npm-green.svg
 [npm-url]: https://www.npmjs.com/package/docco
 [License]: https://img.shields.io/badge/license-MIT-green.svg
 [License-url]: https://opensource.org/licenses/MIT
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white&
-[Next-url]: https://nextjs.org/
+[Mui]: https://img.shields.io/badge/MUI-000000?style=for-the-badge&logo=mui&logoColor=white&
+[Mui-url]: https://github.com/mui/material-ui
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+[Github]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+[Github-url]: https://github.com/
+[Release-it]: https://img.shields.io/badge/release_it-%23121011.svg?style=for-the-badge&logo=semantic-release&color=red
+[Release-it-url]: https://github.com/release-it/release-it
+[Storybook]: https://img.shields.io/badge/storybook-%23121011.svg?style=for-the-badge&logo=storybook&color=purple
+[Storybook-url]: https://github.com/release-it/release-it
+
+
+
